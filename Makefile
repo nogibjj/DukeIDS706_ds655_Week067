@@ -5,12 +5,18 @@ install:
 
 #Adding this to format code using black
 format:	
-	black \Codes/*.py 
+	black \Codes/*.py
+	black *.py
 
 test:
 	python -m pytest \Codes/Test_*.py
 
 lint:
-	pylint --disable=R,C --ignore-patterns=\Codes/Check_.*?py \Codes/*.py
+	ruff check *.py mylib/*.py
+
+container-lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile
+
+refactor: format lint
 
 all: install format lint test
