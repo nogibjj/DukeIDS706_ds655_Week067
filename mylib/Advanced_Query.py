@@ -26,8 +26,11 @@ def Iris_query(db="Iris_Data.db"):
         x.add_row(r)
     print(x)
     conn.close()
-    print("We can see the counts and average sepal and petal metrics for each variety of Iris flower, instead of a data dump of the entire table.")
-    print("This is done using the group by functionality in SQL to aggregate the data and view the relevant columns")
+    print("We can see the counts and average sepal and petal metrics \
+    for each variety of Iris flower, instead of a data dump of the\
+    entire table.")
+    print("This is done using the group by functionality in SQL \
+    to aggregate the data and view the relevant columns")
     return "Success"
 
 
