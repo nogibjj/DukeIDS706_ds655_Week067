@@ -1,36 +1,60 @@
-# This is a default Python repository [![Python CI](https://github.com/DivyaSharma0795/Basic_Python_Repository/actions/workflows/main.yml/badge.svg)](https://github.com/DivyaSharma0795/Basic_Python_Repository/actions/workflows/main.yml)
+## Week 06 Mini Project - Advanced SQL using SQLite Lab
 
-Files in this repository include:
+Status badge for 3 versions of Python : 3.7, 3.8, and 3.9: [![CI](https://github.com/nogibjj/DukeIDS706_ds655_Week05_sqlite/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/DukeIDS706_ds655_Week05_sqlite/actions/workflows/cicd.yml)
 
-
-## 1. Readme
-  The `README.md` file is a markdown file that contains basic information about the repository, what files it contains, and how to consume them
+![image](https://github.com/nogibjj/DukeIDS706_ds655_Week07/blob/main/Resources/Repo_Architecture.drawio.png)
 
 
-## 2. Requirements
-  The `requirements.txt` file has a list of packages to be installed for any required project. Currently, my requirements file contains some basic python packages.
 
+### Lab:
 
-## 3. Codes
-  This folder contains all the code files used in this repository - the files named "Test_" will be used for testing and the remaining will define certain functions
+* Use an AI Assistant, but use a different one then you used from a previous lab (Anthropic's Claud, Bard, Copilot, CodeWhisperer, Colab AI, etc)
+    * Using Github Copilot
+* ETL-Query:  [E] Extract a dataset from URL, [T] Transform, [L] Load into SQLite Database and [Q] Query
+For the ETL-Query lab:
+* [E] Extract a dataset from a URL like Kaggle or data.gov. JSON or CSV formats tend to work well.
+    * Using a csv copy of the Iris Dataset from Github
+* [T] Transform the data by cleaning, filtering, enriching, etc to get it ready for analysis.
+    * 
+* [L] Load the transformed data into a SQLite database table using Python's sqlite3 module.
+    * Loaded in `transform-load.py`
+* [Q] Write and execute SQL queries on the SQLite database to analyze and retrieve insights from the data.
+    * Query in `query.py`
 
+#### Tasks:
 
-## 4. Resources
-  -  This folder contains any other files relevant to this project. Currently, I have added -
+* Fork this project and get it to run
+* Make the query more useful and not a giant mess that prints to screen
+    * -> Modified query to publish top 5 rows of the dataset
 
+* Convert the main.py into a command-line tool that lets you run each step independantly
 
-## 5. CI/CD Automation Files
+    * -> python main.py --step 1 to extract data
+    * -> python main.py --step 2 to load data
+    * -> python main.py --step 3 to query data
+    * -> python main.py --step 4 for advanced query
 
+* Fork this project and do the same thing for a new dataset you choose
 
-  ### 5(a). Makefile
-  The `Makefile` contains instructions for installing packages (specified in `requirements.txt`), formatting the code (using black formatting), testing the code (running all the sample python code files starting with the term *'Check...'* ), and linting the code using pylint
+    * -> Added [Iris dataset](https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv) to the project
+    * -> the `test_main.py` file has been updated to test the new dataset
 
+* Make sure your project passes lint/tests and has a built badge
+    * -> Added a status badge for the workflow to test on 3 versions of Python : 3.7, 3.8, and 3.9
 
-  ### 5(b). Github Actions
-  Github Actions uses the `main.yml` file to call the functions defined in the Makefile based on triggers such as push or pull. Currently, every time a change is pushed onto the repository, it runs the install packages, formatting the code, linting the code, and then testing the code functions
+* Include an architectural diagram showing how the project works
+    * -> Added
 
+#### Reflection Questions
 
-  ### 5(c). Devcontainer
-  The `.devcontainer` folder mainly contains two files - 
-    * `Dockerfile` defines the environment variables - essentially it ensures that all collaborators using the repository are working on the same environment to avoid conflicts and version mismatch issues
-    * `devcontainer.json` is a json file that specifies the environment variables including the installed extensions in the virtual environment
+* What challenges did you face when extracting, transforming, and loading the data? How did you overcome them?
+    * Each csv file has a different format, so I had to make sure that the code was flexible enough to handle different formats, for example the GroceryDB file did not have an 'ID' as the first column name, so I had to include the code to add that based on conditions
+* What insights or new knowledge did you gain from querying the SQLite database?
+    * For datasets that cannot be opened in excel and are too large to be opened in a text editor, SQLite is a great tool to query the data and get a quick look at the data 
+* How can SQLite and SQL help make data analysis more efficient? What are the limitations?
+    * SQLite and SQL can help make data analysis more efficient by allowing the user to query the data and get a quick look at the data without having to open the entire dataset in a text editor or excel. The limitations are that SQLite is not as powerful as other databases and cannot handle large datasets
+* What AI assistant did you use and how did it compare to others you've tried? What are its strengths and weaknesses?
+    * I used Github Copilot, it is very good at predicting the next line of code, but it is not very good at predicting the next few lines of code. It is also not very good at predicting the correct variable names, however it is very good at predicting the correct function names
+* If you could enhance this lab, what would you add or change? What other data would be interesting to load and query?
+    * I wanted to add more analyses to this lab, however I'm not sure how to implement such generic, one-fit-for-all analyses in SQL. With each table there are different column names and data types and there is no easy way to perform a generic EDA without manual intervention
+
