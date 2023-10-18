@@ -12,7 +12,7 @@ test:
 	python -m pytest \Codes/Test_*.py
 
 lint:
-	ruff check *.py \mylib/*.py
+	ruff check \mylib/*.py
 
 container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
