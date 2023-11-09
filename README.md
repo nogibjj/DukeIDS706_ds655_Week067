@@ -1,9 +1,14 @@
-## Week 06 Mini Project - Advanced SQL using SQLite Lab
+## Week 07 Mini Project - Python CLI SQLite Packaged 
 
 Status badge for 3 versions of Python : 3.7, 3.8, and 3.9: [![CI](https://github.com/nogibjj/DukeIDS706_ds655_Week05_sqlite/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/DukeIDS706_ds655_Week05_sqlite/actions/workflows/cicd.yml)
 
 ![image](https://github.com/nogibjj/DukeIDS706_ds655_Week07/blob/main/Resources/Repo_Architecture.drawio.png)
 
+
+    * -> python main.py --step 1 to extract data
+    * -> python main.py --step 2 to load data
+    * -> python main.py --step 3 to query data
+    * -> python main.py --step 4 for advanced query
 
 
 ### Lab:
